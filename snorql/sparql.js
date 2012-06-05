@@ -327,7 +327,7 @@ SPARQL.Query = function(service, priority) {
 				var url = _method == 'GET' ? this.queryUrl() : this.service().endpoint();
 				var xhr = getXmlHttpRequest(url);
 				var content = null;
-
+/*
 				try {
                     if (!document.domain || ((url.match(/^http:\/\//) && url.slice(7, document.domain.length + 7) != document.domain || url.match(/^https:\/\//) && url.slice(8, document.domain.length + 8) != document.domain) && window.netscape && netscape.security && netscape.security.PrivilegeManager)) {
 						netscape.security.PrivilegeManager.enablePrivilege( "UniversalBrowserRead");
@@ -337,7 +337,7 @@ SPARQL.Query = function(service, priority) {
 					alert("Cross-site requests prohibited. You will only be able to SPARQL the origin site: " + e);
                     return;
 				}
-
+*/
 				xhr.open(_method, url, true /* async */);
 				
 				// set the headers, including the content-type for POSTed queries
