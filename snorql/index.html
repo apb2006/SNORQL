@@ -6,19 +6,18 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
      <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
- 
-    <!-- 
-    <script type="text/javascript" src="prototype.js"></script>
-    <script type="text/javascript" src="scriptaculous/scriptaculous.js"></script>
-     -->
+
     <script type="text/javascript" src="sparql.js"></script>
     <script type="text/javascript" src="namespaces.js"></script>
     <script type="text/javascript" src="snorql.js"></script>
+ 
   </head>
 
   <body class="snorql" onload="snorql.start()">
     <div id="header">
-      <h1 id="title">Snorql: A SPARQL Explorer</h1>
+      <h1 >Snorql: <span id="endpoint">A SPARQL Explorer</span>
+      <button onclick="setendPoint()">..</button></h1>
+      
     </div>
 
     <div class="section" style="float: right; width: 8em">

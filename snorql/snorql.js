@@ -8,9 +8,17 @@ String.prototype.startsWith = function(str) {
 	return (this.match("^"+str) == str);
 }
 
+function setendPoint(){
+	var fname=prompt("Endpoint:",snorql._endpoint)
+	if(fname){
+		snorql._endpoint=fname
+		snorql.start()
+	}
+};
+
 function Snorql() {
     // modify this._endpoint to point to your SPARQL endpoint
-    this._endpoint = "http://fuseki-apb.zapto.org/myDataset/query";
+    this._endpoint = "http://fuseki-apb.zapto.org/skos/query";
     // modify these to your likeing
     this._poweredByLink = 'http://jena.apache.org/documentation/serving_data/';
     this._poweredByLabel = 'Fuseki';
@@ -152,9 +160,8 @@ function Snorql() {
     }
 
     this._displayEndpointURL = function() {
-        var newTitle = 'Snorql: Exploring ' + this._endpoint;
-        this._display(document.createTextNode(newTitle), 'title');
-        document.title = newTitle;
+        this._display(document.createTextNode(this._endpoint), 'endpoint');
+        document.title = 'Snorql: ' + this._endpoint;
     }
 
     this._displayPoweredBy = function() {
